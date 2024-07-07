@@ -37,9 +37,9 @@ h1 {
 }
 
 button {
-	min-width: 70px;
-	min-height: 70px;
-	border-radius: 8px;
+	min-width: 80px;
+	min-height: 80px;
+	border-radius: 15px;
 	border: 1px solid transparent;
 	padding: 0.6em 1.2em;
 	font-size: 1.5em;
@@ -82,10 +82,22 @@ button:focus-visible {
 
 .status {
 	font-size: 1.5em;
-	margin-bottom: 15px;
+	margin-bottom: 25px;
 	font-weight: 500;
 }
 
 .game {
 	display: flex;
+	gap: 25px;
+}
+
+.game-board {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.moves {
+	font-size: 1em;
+	min-height: 20px;
 }
