@@ -1,30 +1,18 @@
 # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Игра «крестики-нолики», которая:
 
-Currently, two official plugins are available:
+-Позволяет играть в крестики-нолики,
+-Указывает, когда игрок выиграл игру,
+-Сохраняет историю игры по мере ее развития,
+-Позволяет игрокам просматривать историю игры и видеть предыдущие версии игрового поля.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+дополнительные функции разработанные мною:
 
-## Expanding the ESLint configuration
+1.Только для текущего хода вместо кнопки показывать «Вы на ходу №…».
+2.Перепишите так Board, чтобы для создания квадратов использовались два цикла вместо их жесткого кодирования.
+3.Добавьте кнопку-переключатель, которая позволит сортировать ходы в порядке возрастания или убывания.
+4.Когда кто-то выигрывает, выделите три квадрата, которые привели к победе (а когда никто не выигрывает, выведите сообщение о ничьей).
+5.Отобразить местоположение каждого хода в формате (строка, столбец) в списке истории ходов.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+В этой игре я затронул концепции React, включая элементы, компоненты, свойства и состояние. 
