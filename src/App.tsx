@@ -25,6 +25,12 @@ function Game() {
 	}
 	const moves = history.map((squares, move) => {
 		let description;
+		if (move > 0 && move === currentMove) {
+
+			return (
+				<p className='current-move' key={move}>Вы на ходу # {currentMove}</p>
+			);
+		}
 		if (move > 0) {
 			description = 'Go to move #' + move;
 		} else {
@@ -35,6 +41,7 @@ function Game() {
 				<button className='moves' onClick={() => jumpTo(move)}>{description}</button>
 			</li>
 		);
+
 	});
 	return (
 		<div className="game">
@@ -42,7 +49,7 @@ function Game() {
 				<Board xIsNext={xIsNext} squares={currentSquares} onPlay={handleplay} />
 			</div>
 			<div className="game-info">
-				<ol>{moves}</ol>
+				<ul className='history-list'>{moves}</ul>
 			</div>
 		</div>
 	)

@@ -31,6 +31,10 @@ body {
 	min-height: 100vh;
 }
 
+ul li {
+	list-style: none;
+}
+
 h1 {
 	font-size: 3.2em;
 	line-height: 1.1;
@@ -100,4 +104,18 @@ button:focus-visible {
 .moves {
 	font-size: 1em;
 	min-height: 20px;
+}
+
+.history-list {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.current-move {
+
+	color: #321eec;
+	padding: 1.2em;
+	margin: 5px;
+
 }
