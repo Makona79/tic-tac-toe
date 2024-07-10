@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import Board from './components/Board';
 import './App.css'
 
@@ -23,7 +23,7 @@ function Game() {
 		setCurrentMove(nextMove);
 
 	}
-	const moves = history.map((squares, move) => {
+	const moves = history.map((_squares, move) => {
 		let description;
 		if (move > 0 && move === currentMove) {
 
