@@ -123,3 +123,8 @@ button:focus-visible {
 	margin: 5px;
 
 }
+
+.title-tic {
+	font-size: 2em;
+	margin-bottom: 40px;
+}

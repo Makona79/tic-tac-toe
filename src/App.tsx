@@ -44,14 +44,17 @@ function Game() {
 
 	});
 	return (
-		<div className="game">
-			<div className="game-board">
-				<Board xIsNext={xIsNext} squares={currentSquares} onPlay={handleplay} />
+		<>
+			<h2 className='title-tic'>Игра крестики-нолики</h2>
+			<div className="game">
+				<div className="game-board">
+					<Board xIsNext={xIsNext} squares={currentSquares} onPlay={handleplay} />
+				</div>
+				<div className="game-info">
+					<ul className='history-list'>{moves}</ul>
+				</div>
 			</div>
-			<div className="game-info">
-				<ul className='history-list'>{moves}</ul>
-			</div>
-		</div>
+		</>
 	)
 }
 export default Game;
