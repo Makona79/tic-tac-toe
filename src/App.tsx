@@ -54,6 +54,10 @@ function Game() {
 					<ul className='history-list'>{moves}</ul>
 				</div>
 			</div>
+			<div className="game2">
+				<h2 className="title-tic">Игра крестики-нолики(усложнённая)</h2>
+				
+			</div>
 		</>
 	)
 }
