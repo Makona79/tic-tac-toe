@@ -1,6 +1,16 @@
+export const calculateWinner = (squares: string[]) => {
 
+	let moveNot = 0;
+	squares.forEach(elem => {
+		if (elem === null) {
+			++moveNot;
 
-function calculateWinner(squares: string[]) {
+		}
+	});
+	if (moveNot === 0) {
+		return 'draw';
+	}
+
 	const lines = [
 		[0, 1, 2],
 		[3, 4, 5],
@@ -23,4 +33,3 @@ function calculateWinner(squares: string[]) {
 	return null;
 }
 
-export default calculateWinner;

@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import Board from './components/Board';
-import './App.css'
+import Board from './Board';
 
 
-function Game() {
+
+const Game = () => {
 
 
 	const [history, setHistory] = useState([Array(9).fill(null)]);
@@ -11,22 +11,20 @@ function Game() {
 	const xIsNext = currentMove % 2 === 0;
 	const currentSquares = history[currentMove];
 
-	function handleplay(nextSquares: string[]) {
+	const handleplay = (nextSquares: string[]) => {
 
 		const nextHistory = [...history.slice(0, currentMove + 1), nextSquares];
-
 		setHistory(nextHistory);
 		setCurrentMove(nextHistory.length - 1);
-
 	}
-	function jumpTo(nextMove: number) {
+
+	const jumpTo = (nextMove: number) => {
 		setCurrentMove(nextMove);
-
 	}
+
 	const moves = history.map((_squares, move) => {
 		let description;
 		if (move > 0 && move === currentMove) {
-
 			return (
 				<p className='current-move' key={move}>Вы на ходу # {currentMove}</p>
 			);
@@ -56,7 +54,7 @@ function Game() {
 			</div>
 			<div className="game2">
 				<h2 className="title-tic">Игра крестики-нолики(усложнённая)</h2>
-				
+
 			</div>
 		</>
 	)

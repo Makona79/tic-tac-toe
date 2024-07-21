@@ -1,34 +1,40 @@
 
 import Square from './Square'
-import calculateWinner from './CalculateWinner';
+import { calculateWinner } from '../utils/CalculateWinner';
 
 
-function Board({ xIsNext, squares, onPlay }: { xIsNext: boolean, squares: string[], onPlay: (nextSquares: string[]) => void }) {
+const Board = ({ xIsNext, squares, onPlay }:
+	{
+		xIsNext: boolean,
+		squares: string[],
+		onPlay: (nextSquares: string[]) => void
+	}) => {
 
 
-	function handleClick(i: number) {
+	const handleClick = (i: number) => {
 		if (squares[i] || calculateWinner(squares)) {
 			return;
 		}
 		const nextSquares = squares.slice();
-		if (xIsNext) {
-			nextSquares[i] = "X";
-		} else {
-			nextSquares[i] = "O";
-		}
+		nextSquares[i] = xIsNext ? "X" : "O";
 
 		onPlay(nextSquares);
 
 	}
 	const winner = calculateWinner(squares);
 	let status;
-	if (winner) {
-		status = "Winner: " + winner;
 
+
+	if (winner === 'draw') {
+		status = "It`s draw ";
 	} else {
-		status = "Next player: " + (xIsNext ? "X" : "O")
-
+		if (winner) {
+			status = "Winner: " + winner;
+		} else {
+			status = "Next player: " + (xIsNext ? "X" : "O")
+		}
 	}
+
 
 	return (
 		<>
