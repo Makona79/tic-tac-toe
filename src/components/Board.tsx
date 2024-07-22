@@ -24,21 +24,25 @@ const Board = ({ xIsNext, squares, onPlay }:
 	const winner = calculateWinner(squares);
 	let status;
 
-
-	if (winner === 'draw') {
-		status = "It`s draw ";
-	} else {
-		if (winner) {
-			status = "Winner: " + winner;
-		} else {
-			status = "Next player: " + (xIsNext ? "X" : "O")
+	if (winner) {
+		// status = "Winner: " + winner;
+		status = "Победитель: " + winner;
+	}
+	else {
+		if (winner === 'draw') {
+			// status = "It`s draw ";
+			status = "Ничья";
+		}
+		else {
+			// status = "Next player: " + (xIsNext ? "X" : "O")
+			status = "Следующий игрок: " + (xIsNext ? "X" : "O")
 		}
 	}
 
 
 	return (
 		<>
-			<div className="status">{status}</div>
+			<h3 className="status">{status}</h3>
 			<div className="board-row">
 				<Square value={squares[0]} onSquareClick={() => handleClick(0)} />
 				<Square value={squares[1]} onSquareClick={() => handleClick(1)} />

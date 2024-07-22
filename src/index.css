@@ -53,7 +53,7 @@ button {
 	font-size: 1.5em;
 	font-weight: 500;
 	font-family: inherit;
-	background-color: #1a1a1a;
+
 	cursor: pointer;
 	transition: border-color 0.25s;
 	margin: 5px;
@@ -90,13 +90,21 @@ button:focus-visible {
 
 .status {
 	font-size: 1.5em;
-	margin-bottom: 25px;
+	margin-bottom: 35px;
 	font-weight: 500;
+	padding: 20px;
+	border-radius: 14px;
+	background-color: #f9f9f9;
+	border: 1px solid transparent;
+	transition: border-color 0.25s;
 }
+
+
 
 .game {
 	display: flex;
 	gap: 25px;
+	min-height: 100vh;
 
 	@media (max-width: 570px) {
 		flex-direction: column;
