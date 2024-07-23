@@ -24,12 +24,14 @@ const Board = ({ xIsNext, squares, onPlay }:
 	const winner = calculateWinner(squares);
 	let status;
 
-	if (winner) {
+	console.log('i=  ', winner);
+	if (winner && winner.winner != 'draw') {
 		// status = "Winner: " + winner;
-		status = "Победитель: " + winner;
+		status = "Победитель: " + winner.winner;
+		// winLine=winner.line;
 	}
 	else {
-		if (winner === 'draw') {
+		if (winner && winner.winner === 'draw') {
 			// status = "It`s draw ";
 			status = "Ничья";
 		}

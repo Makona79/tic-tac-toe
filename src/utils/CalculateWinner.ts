@@ -1,16 +1,5 @@
 export const calculateWinner = (squares: string[]) => {
-
 	let moveNot = 0;
-	squares.forEach(elem => {
-		if (elem === null) {
-			++moveNot;
-
-		}
-	});
-	if (moveNot === 0) {
-		return 'draw';
-	}
-
 	const lines = [
 		[0, 1, 2],
 		[3, 4, 5],
@@ -23,13 +12,29 @@ export const calculateWinner = (squares: string[]) => {
 	];
 
 	for (let i = 0; i < lines.length; i++) {
-
 		const [a, b, c] = lines[i];
 
 		if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-			return squares[a];
+			return {
+				line: lines[i],
+				winner: squares[a]
+			};
 		}
 	}
+
+
+	squares.forEach(elem => {
+		if (elem === null) {
+			++moveNot;
+		}
+	});
+	if (moveNot === 0) {
+		return {
+			winner: 'draw'
+		}
+	}
+
+
 	return null;
 }
 
